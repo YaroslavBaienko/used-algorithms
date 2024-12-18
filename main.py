@@ -1,4 +1,4 @@
-from algoritms import boyer_moore_majority_vote, population, fitness
+from algoritms import boyer_moore_majority_vote, population, fitness, boyer_moore_text_pattern
 
 if __name__ == "__main__":
     presidents = ['Donald Trump'] * 245
@@ -20,3 +20,9 @@ if __name__ == "__main__":
     # Get the best individual after the last generation.
     best = max(population, key=fitness)
     print("Best individual:", best, "Fitness:", fitness(best))
+
+    # Example usage
+    text = "HERE IS A SIMPLE EXAMPLE"
+    pattern = "EXAMPLE"
+    index = boyer_moore_text_pattern(text, pattern)
+    print(f"Pattern found at index: {index}")  # Output should be the starting index of "EXAMPLE" in text
